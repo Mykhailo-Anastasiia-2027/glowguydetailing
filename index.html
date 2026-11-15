@@ -63,7 +63,7 @@
 <link rel="apple-touch-icon" href="img/logo.jpg" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&family=Caveat:wght@700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
 <style>
   :root{
     --bg:#000000;
@@ -84,7 +84,7 @@
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
   @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important} }
-  body{margin:0;background:var(--bg);color:var(--ink);font-family:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;padding-top:104px}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
   img{max-width:100%;display:block}
   a{color:inherit}
   button,[role="button"],summary{min-height:2.75rem}
@@ -93,8 +93,8 @@
   h1,h2,h3,.sora{font-family:"Manrope",sans-serif}
 
   /* header — floating pill */
-  header{position:fixed;top:14px;left:0;right:0;z-index:60;background:transparent}
-  .nav{display:flex;align-items:center;gap:26px;height:70px;background:rgba(16,16,16,.85);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--line);border-radius:999px;padding:0 12px 0 22px;box-shadow:0 18px 44px -18px rgba(0,0,0,.85);max-width:1180px}
+  header{position:sticky;top:0;z-index:60;background:rgba(4,6,10,.88);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;gap:26px;height:72px;max-width:1180px}
   .brand{display:flex;align-items:center;gap:12px;text-decoration:none;margin-right:auto}
   .brand img{width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 2px var(--line)}
   .brand-name{font-weight:800;font-size:1.05rem;line-height:1.1;letter-spacing:-.01em}
@@ -116,14 +116,14 @@
   @media (max-width:900px){ .nav-links a:not(.btn){display:none} }
 
   /* hero — centred, headline above media */
-  .hero{position:relative;padding:44px 0 84px;overflow:hidden;background:radial-gradient(900px 480px at 50% -12%, rgba(56,182,232,.13), transparent 62%),var(--bg)}
-  .hero-grid{display:grid;grid-template-columns:1fr;gap:44px;justify-items:center;text-align:center}
-  .hero-eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:.86rem;font-weight:700;letter-spacing:.02em;text-transform:none;color:#fff;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:9px 18px}
-  .hero h1{font-weight:800;font-size:clamp(2.7rem,6vw,4.6rem);line-height:1.05;letter-spacing:-.02em;margin:26px auto 20px;max-width:900px}
+  .hero{position:relative;padding:64px 0 88px;overflow:hidden;background:radial-gradient(1000px 540px at 88% -10%, rgba(56,182,232,.16), transparent 60%),radial-gradient(700px 420px at -10% 110%, rgba(14,110,168,.12), transparent 60%),var(--bg)}
+  .hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:54px;align-items:center}
+  .hero-eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:.76rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:var(--blue-bright);background:rgba(56,182,232,.1);border:1px solid rgba(56,182,232,.3);border-radius:999px;padding:8px 16px}
+  .hero h1{font-weight:800;font-size:clamp(2.6rem,5.4vw,4.3rem);line-height:1.05;letter-spacing:-.02em;margin:24px 0 20px}
   .hero h1 .shine{color:var(--blue-bright)}
-  .hero-lede{font-size:1.14rem;color:var(--ink-soft);max-width:620px;margin:0 auto 32px}
-  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
-  .hero-facts{display:flex;gap:0;margin-top:40px;border-top:1px solid var(--line);padding-top:24px;flex-wrap:wrap;justify-content:center}
+  .hero-lede{font-size:1.13rem;color:var(--ink-soft);max-width:33rem;margin:0 0 30px}
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
+  .hero-facts{display:flex;gap:0;margin-top:38px;border-top:1px solid var(--line);padding-top:22px;flex-wrap:wrap}
   .hero-fact{padding-right:26px;margin-right:26px;border-right:1px solid var(--line)}
   .hero-fact:last-child{border-right:none;margin-right:0;padding-right:0}
   .hero-fact b{display:block;font-size:1.22rem;font-weight:800;line-height:1.2}
@@ -134,6 +134,11 @@
   .hero-card .hc-top{display:flex;align-items:center;gap:9px;font-weight:800;font-size:.94rem}
   .hero-card p{margin:6px 0 0;font-size:.88rem;color:var(--ink-soft);line-height:1.5}
   .dot{width:9px;height:9px;border-radius:50%;background:#43d17c;flex:none;box-shadow:0 0 0 4px rgba(67,209,124,.18)}
+  .hero-videos{position:relative;height:560px}
+  .hv{position:absolute;border-radius:22px;object-fit:cover;border:1px solid var(--line);box-shadow:var(--shadow);background:#0a0f16}
+  .hv-main{right:0;top:0;width:min(330px,74%);height:520px;box-shadow:0 34px 80px -28px rgba(56,182,232,.35)}
+  .hv-back{left:0;bottom:0;width:min(255px,58%);height:400px;transform:rotate(-3deg)}
+  @media (max-width:960px){ .hero-grid{grid-template-columns:1fr;gap:40px} .hero-videos{height:460px;max-width:520px} .hv-main{height:430px} .hv-back{height:320px} }
   @media (max-width:960px){ .hero-media img,.hero-media video{height:380px} .hero-card{left:12px;bottom:12px} .hero-fact{padding-right:16px;margin-right:16px} }
 
   /* marquee */
@@ -179,7 +184,7 @@
   .pkg{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:36px 30px;display:flex;flex-direction:column;position:relative;transition:transform .3s, box-shadow .3s}
   .pkg:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
   .pkg.featured{background:#161616;border-color:#3d3d3d;box-shadow:0 -22px 50px -20px rgba(56,182,232,.35), var(--shadow)}
-  .pkg-tag{position:absolute;top:-16px;left:26px;background:none;color:#38b6e8;font-family:"Caveat",cursive;font-size:1.5rem;font-weight:700;letter-spacing:0;text-transform:none;padding:0;transform:rotate(-3deg)}
+  .pkg-tag{position:absolute;top:-13px;left:26px;background:linear-gradient(135deg,var(--blue),var(--blue-deep));color:#fff;font-size:.68rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:6px 14px;border-radius:999px}
   .pkg h3{font-size:1.35rem;font-weight:800;margin:0 0 5px}
   .pkg .pkg-sub{font-size:.92rem;color:var(--ink-faint);margin:0 0 8px}
   .pkg .pkg-time{font-size:.86rem;color:var(--blue-bright);font-weight:700;margin:0 0 18px}
@@ -298,6 +303,30 @@
   .foot p{margin:0;color:var(--ink-faint);font-size:.9rem}
   .foot a{font-weight:700;text-decoration:none;color:var(--blue-bright)}
 
+
+  /* work video tiles */
+  .vrow{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:18px}
+  .vtile{width:100%;height:480px;object-fit:cover;border-radius:20px;border:1px solid var(--line);background:#0a0f16;display:block}
+  @media (max-width:860px){ .vrow{grid-template-columns:1fr 1fr} .vtile{height:380px} .vtile:last-child{display:none} }
+  @media (max-width:560px){ .vrow{grid-template-columns:1fr} .vtile{height:440px} .vtile:last-child{display:block} }
+
+  /* lead form */
+  .f-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .f-field{display:flex;flex-direction:column;gap:7px}
+  .f-field.f-wide{grid-column:1 / -1}
+  .f-field label{font-size:.85rem;font-weight:700;color:var(--ink-soft)}
+  .f-field input,.f-field select,.f-field textarea{background:#0b111c;border:1px solid var(--line);border-radius:12px;color:var(--ink);font:inherit;font-size:.98rem;padding:13px 15px;width:100%}
+  .f-field input:focus,.f-field select:focus,.f-field textarea:focus{outline:none;border-color:var(--blue)}
+  .f-field textarea{resize:vertical}
+  .f-submit{width:100%;margin-top:18px}
+  .form-note{margin:14px 0 0;text-align:center;color:var(--ink-faint);font-size:.88rem}
+  .form-err{margin:12px 0 0;text-align:center;color:#ff8a8a;font-size:.9rem;font-weight:600}
+  .form-ok{text-align:center;padding:38px 10px}
+  .form-ok .ok-check{width:64px;height:64px;margin:0 auto 16px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--blue-deep));color:#fff;font-size:1.7rem;font-weight:800;display:flex;align-items:center;justify-content:center}
+  .form-ok h3{margin:0 0 8px;font-size:1.4rem;font-weight:800}
+  .form-ok p{margin:0;color:var(--ink-soft)}
+  @media (max-width:640px){ .f-grid{grid-template-columns:1fr} }
+
   /* sticky mobile bar */
   .sticky-bar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:none;gap:10px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(5,5,5,.94);border-top:1px solid var(--line);backdrop-filter:blur(10px)}
   .sticky-bar a{flex:1;text-align:center;text-decoration:none;font-weight:800;font-size:.92rem;padding:13px 8px;border-radius:999px;min-height:50px;display:inline-flex;align-items:center;justify-content:center}
@@ -355,34 +384,29 @@
   <!-- HERO -->
   <div class="hero">
     <div class="wrap hero-grid">
-      <div class="reveal in">
-        <span class="hero-eyebrow">★★★★★&nbsp; 5.0 · 8 reviews on Google</span>
+      <div class="hero-copy reveal in">
+        <span class="hero-eyebrow">Mobile detailing · Niagara &amp; Hamilton</span>
         <h1>Your car, <span class="shine">showroom-clean</span> — without leaving home.</h1>
         <p class="hero-lede">Glow Guy Detailing is fully mobile across the Niagara Region &amp; Hamilton. Interior deep cleans and full details — done at your driveway, garage or office, with one exact price in writing before we start.</p>
         <div class="hero-ctas">
           <a class="btn btn-primary" href="#prices">Get my exact price
             <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
-          <a class="btn btn-ghost" href="https://ig.me/m/glowguy.detailing" target="_blank" rel="noopener">Message on Instagram</a>
+          <a class="btn btn-ghost" href="tel:+14375515149">Call 437-551-5149</a>
         </div>
         <div class="hero-facts">
           <div class="hero-fact"><b>From $99</b><span>Winter Salt Rescue</span></div>
           <div class="hero-fact"><b>Exact price</b><span>In writing, up front</span></div>
-          <div class="hero-fact"><b>7 days</b><span>Across Niagara &amp; Hamilton</span></div>
-          <div class="hero-fact"><b>5.0 ★★★★★</b><span>8 reviews on Google</span></div>
+          <div class="hero-fact"><b>7 days a week</b><span>We come to you</span></div>
         </div>
       </div>
-      <div class="hero-media reveal in">
-        <video autoplay muted loop playsinline preload="metadata" poster="img/hero.jpg" aria-label="Glow Guy detailing work — clean interiors montage"><source src="img/hero-loop.mp4" type="video/mp4" /></video>
-        <div class="hero-card">
-          <div class="hc-top"><span class="dot"></span> Now booking</div>
-          <p>Send 2–3 photos of your car — get one fixed price back by text, usually within one business hour.</p>
-        </div>
+      <div class="hero-videos reveal in" aria-label="Glow Guy detailing work on video">
+        <video class="hv hv-back" autoplay muted loop playsinline preload="metadata" poster="img/poster-cadillac.jpg"><source src="img/vid-cadillac.mp4" type="video/mp4" /></video>
+        <video class="hv hv-main" autoplay muted loop playsinline preload="metadata" poster="img/poster-hero.jpg"><source src="img/vid-hero.mp4" type="video/mp4" /></video>
       </div>
     </div>
   </div>
 
-  <div class="strip"><div class="strip-inner"><span>✦ We come to you — home or office</span><span>✦ Exact price in writing</span><span>✦ Interior · Exterior · Full Details · Salt Rescue</span><span>✦ Winter salt removal specialists</span><span>✦ We come to you — home or office</span><span>✦ Exact price in writing</span><span>✦ Interior · Exterior · Full Details · Salt Rescue</span><span>✦ Winter salt removal specialists</span></div></div>
 
   <!-- PRICE CALCULATOR -->
   <section class="section" id="prices">
@@ -413,7 +437,7 @@
             <div class="calc-price" id="calcPrice">$150</div>
             <p class="calc-meta" id="calcMeta">Interior Reset · Sedan / Coupe · about 2–3 hours</p>
             <p class="calc-note">Final price confirmed in writing from your photos before we arrive. Heavily soiled vehicles (pet hair, bio, heavy salt) may adjust — always quoted first, never after.</p>
-            <a class="btn btn-primary" id="calcBook" href="https://tally.so/r/e5Q1zq?pkg=Interior%20Reset&size=Sedan%20%2F%20Coupe" target="_blank" rel="noopener">Book Interior Reset — $150</a>
+            <a class="btn btn-primary" id="calcBook" href="#book" target="_blank" rel="noopener">Book Interior Reset — $150</a>
             <p class="calc-note" style="margin:14px 0 0">Prefer to chat first? <a href="https://ig.me/m/glowguy.detailing" target="_blank" rel="noopener" style="color:var(--blue-bright);font-weight:700">Instagram DM</a> · <a href="https://m.me/61582320059372" target="_blank" rel="noopener" style="color:var(--blue-bright);font-weight:700">Facebook</a> · <a href="tel:+14375515149" style="color:var(--blue-bright);font-weight:700">437-551-5149</a></p>
           </div>
         </div>
@@ -454,7 +478,7 @@
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#38b6e8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Dash, console, vents &amp; door panels</li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#38b6e8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Interior glass, streak-free</li>
           </ul>
-          <a class="btn btn-ghost" href="#book">Book Interior Reset</a>
+          <a class="btn btn-ghost" href="#book" data-book="Interior Reset">Book Interior Reset</a>
         </article>
 
         <article class="pkg featured reveal">
@@ -470,7 +494,7 @@
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5fd3ff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Door jambs &amp; exterior glass</li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5fd3ff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Spray sealant — months of gloss</li>
           </ul>
-          <a class="btn btn-primary" href="#book">Book Full Glow</a>
+          <a class="btn btn-primary" href="#book" data-book="Full Glow">Book Full Glow</a>
         </article>
 
         <article class="pkg reveal">
@@ -485,7 +509,7 @@
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#38b6e8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> 12-month paint sealant</li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#38b6e8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Engine-bay detail included</li>
           </ul>
-          <a class="btn btn-ghost" href="#book">Book Showroom</a>
+          <a class="btn btn-ghost" href="#book" data-book="Showroom + Sealant">Book Showroom</a>
         </article>
       </div>
       <p class="pkgs-note reveal">Not sure which one your car needs? <b>Text us photos</b> — we'll tell you honestly, even if it's the cheaper package.</p>
@@ -543,18 +567,21 @@
     <div class="wrap">
       <div class="sec-head reveal">
         <p class="kicker">Our work</p>
-        <h2>Real cars, real Niagara driveways</h2>
-        <p>Every photo below is our own work — no stock, no filters hiding anything.</p>
+        <h2>The work speaks for itself</h2>
+        <p>Filmed on real jobs across Niagara &amp; Hamilton — our own cars, our own driveways, no stock footage.</p>
       </div>
-      <div class="slideshow reveal" id="slideshow" aria-label="Rotating photos of Glow Guy detailing work">
-        <div class="slide on"><img src="img/slide-cargo.jpg" width="900" height="1200" loading="lazy" decoding="async" alt="Minivan cargo area and interior after a full Interior Reset" /><span class="slide-cap">Interior Reset — cargo &amp; cabin, spotless</span></div>
-        <div class="slide"><img src="img/slide-console.jpg" width="900" height="1200" loading="lazy" decoding="async" alt="Clean centre console, dash and shifter after detailing" /><span class="slide-cap">Console &amp; dash — detailed</span></div>
-        <div class="slide"><img src="img/work-5.jpg" width="800" height="600" loading="lazy" decoding="async" alt="Clean leather interior of a full-size SUV after detailing" /><span class="slide-cap">Leather interior — full-size SUV</span></div>
-        <div class="slide"><img src="img/slide-carpet.jpg" width="900" height="1200" loading="lazy" decoding="async" alt="Carpet after hot-water extraction cleaning" /><span class="slide-cap">Carpets — hot-water extraction</span></div>
-        <div class="slide"><img src="img/work-2.jpg" width="800" height="600" loading="lazy" decoding="async" alt="SUV cargo area after the Interior Reset — clean panels and carpets" /><span class="slide-cap">After — Interior Reset</span></div>
-        <button class="sl-btn sl-prev" type="button" aria-label="Previous photo">‹</button>
-        <button class="sl-btn sl-next" type="button" aria-label="Next photo">›</button>
-        <div class="sl-dots" role="tablist" aria-label="Choose photo"></div>
+      <div class="vrow reveal">
+        <video class="vtile" autoplay muted loop playsinline preload="metadata" poster="img/poster-cargo.jpg" aria-label="Clean minivan interior after detailing"><source src="img/vid-cargo.mp4" type="video/mp4" /></video>
+        <video class="vtile" autoplay muted loop playsinline preload="metadata" poster="img/poster-scrub.jpg" aria-label="Floor mat being deep-cleaned with foam"><source src="img/vid-scrub.mp4" type="video/mp4" /></video>
+        <video class="vtile" autoplay muted loop playsinline preload="metadata" poster="img/poster-trunk.jpg" aria-label="Clean trunk after detailing"><source src="img/vid-trunk.mp4" type="video/mp4" /></video>
+      </div>
+      <div class="gallery">
+        <figure class="reveal"><img src="img/slide-cargo.jpg" width="900" height="1200" loading="lazy" decoding="async" alt="Minivan cargo area and interior after a full Interior Reset" /></figure>
+        <figure class="reveal"><img src="img/work-5.jpg" width="800" height="600" loading="lazy" decoding="async" alt="Clean leather interior of a full-size SUV after detailing" /></figure>
+        <figure class="reveal"><img src="img/slide-console.jpg" width="900" height="1200" loading="lazy" decoding="async" alt="Clean centre console, dash and shifter after detailing" /></figure>
+        <figure class="reveal"><img src="img/work-2.jpg" width="800" height="600" loading="lazy" decoding="async" alt="SUV cargo area after the Interior Reset — clean panels and carpets" /></figure>
+        <figure class="reveal"><img src="img/slide-carpet.jpg" width="900" height="1200" loading="lazy" decoding="async" alt="Carpet after hot-water extraction cleaning" /></figure>
+        <figure class="reveal"><img src="img/work-4.jpg" width="800" height="600" loading="lazy" decoding="async" alt="Centre console and cupholders after detailing — spotless" /></figure>
       </div>
       <div class="gallery">
         <figure class="reveal"><img src="img/work-1.jpg" width="800" height="600" loading="lazy" decoding="async" alt="Dirty SUV cargo area before an Interior Reset detail" /><figcaption>Before — family SUV interior</figcaption></figure>
@@ -595,23 +622,6 @@
   </section>
 
 
-  <!-- COMPARISON -->
-  <section class="section" id="compare">
-    <div class="wrap">
-      <div class="sec-head center reveal">
-        <p class="kicker">The difference</p>
-        <h2>Tunnel wash vs. Glow Guy</h2>
-      </div>
-      <div class="cmp reveal">
-        <div class="cmp-row cmp-head"><span></span><span class="cmp-no">TUNNEL WASH</span><span class="cmp-yes">GLOW GUY</span></div>
-        <div class="cmp-row"><span>Deep interior cleaning &amp; extraction</span><span class="cmp-x">✕</span><span class="cmp-c">✓</span></div>
-        <div class="cmp-row"><span>Winter salt pulled out of carpets</span><span class="cmp-x">✕</span><span class="cmp-c">✓</span></div>
-        <div class="cmp-row"><span>Comes to your home or office</span><span class="cmp-x">✕</span><span class="cmp-c">✓</span></div>
-        <div class="cmp-row"><span>Exact price for your car, in writing</span><span class="cmp-x">✕</span><span class="cmp-c">✓</span></div>
-        <div class="cmp-row"><span>Before &amp; after photos sent to you</span><span class="cmp-x">✕</span><span class="cmp-c">✓</span></div>
-      </div>
-    </div>
-  </section>
 
   <!-- FAQ -->
   <section class="section" id="faq">
@@ -655,58 +665,53 @@
     </div>
   </section>
 
+
   <!-- REVIEWS -->
-  <section class="section section-alt" id="reviews" style="padding-top:20px">
+  <section class="section section-alt" id="reviews">
     <div class="wrap">
-      <div class="rev-head reveal">
-        <div>
-          <p class="kicker">Google reviews</p>
-          <h2 style="font-weight:700;font-size:clamp(1.9rem,3.8vw,2.7rem);line-height:1.14;letter-spacing:-.015em;margin:0 0 13px">Rated 5.0 by local drivers</h2>
-          <div class="rev-score"><span class="big">5.0</span><div><div class="rev-stars">★★★★★</div><div class="rev-sub">Based on 8 reviews on Google</div></div></div>
-        </div>
-        <div class="rev-nav">
-          <button class="sl-btn" type="button" id="revPrev" aria-label="Previous reviews" style="position:static;transform:none">‹</button>
-          <button class="sl-btn" type="button" id="revNext" aria-label="Next reviews" style="position:static;transform:none">›</button>
-        </div>
+      <div class="sec-head reveal">
+        <p class="kicker">Reviews</p>
+        <h2>What local drivers say</h2>
+        <p>Every review below is from our Google profile — word for word.</p>
       </div>
       <div class="rev-track reveal" id="revTrack">
         <article class="rev-card">
-          <div class="rev-top"><span class="rev-ava" style="background:#0e6ea8">A</span><div><div class="rev-name">Alex Dudik</div><div class="rev-meta">Nov 2025 · Google review</div></div></div>
+          <div class="rev-top"><span class="rev-ava" style="background:#0e6ea8">A</span><div><div class="rev-name">Alex Dudik</div><div class="rev-meta">Google review</div></div></div>
           <div class="rev-stars" aria-label="5 out of 5 stars">★★★★★</div>
           <p>My interior was covered with crumbs and dog hair from my kids and puppy. Now it looks spotless and smells amazing. Truly magical work!</p>
         </article>
         <article class="rev-card">
-          <div class="rev-top"><span class="rev-ava" style="background:#7c4dbd">D</span><div><div class="rev-name">Dima Klim</div><div class="rev-meta">Nov 2025 · Google review</div></div></div>
+          <div class="rev-top"><span class="rev-ava" style="background:#7c4dbd">D</span><div><div class="rev-name">Dima Klim</div><div class="rev-meta">Google review</div></div></div>
           <div class="rev-stars" aria-label="5 out of 5 stars">★★★★★</div>
           <p>Booked a full exterior detail, and it came out better than I expected. The foam wash, the shine, the tire dressing — everything looked fantastic. Will recommend to friends.</p>
         </article>
         <article class="rev-card">
-          <div class="rev-top"><span class="rev-ava" style="background:#c2185b">S</span><div><div class="rev-name">Sofya Chepurnova</div><div class="rev-meta">Nov 2025 · Google review</div></div></div>
+          <div class="rev-top"><span class="rev-ava" style="background:#c2185b">S</span><div><div class="rev-name">Sofya Chepurnova</div><div class="rev-meta">Google review</div></div></div>
           <div class="rev-stars" aria-label="5 out of 5 stars">★★★★★</div>
           <p>Fantastic car wash service! My car came out spotless inside and out. The exterior shine was perfect, and the interior detail was thorough and fresh. Great attention to detail and excellent customer service. Highly recommended!</p>
         </article>
         <article class="rev-card">
-          <div class="rev-top"><span class="rev-ava" style="background:#2e7d32">A</span><div><div class="rev-name">Amin Bani-Yasin</div><div class="rev-meta">Nov 2025 · Google review</div></div></div>
+          <div class="rev-top"><span class="rev-ava" style="background:#2e7d32">A</span><div><div class="rev-name">Amin Bani-Yasin</div><div class="rev-meta">Google review</div></div></div>
           <div class="rev-stars" aria-label="5 out of 5 stars">★★★★★</div>
           <p>Great service from start to finish. He was polite, fast, and extremely thorough. The paint feels silky smooth after the wash and wax. Five stars all day.</p>
         </article>
         <article class="rev-card">
-          <div class="rev-top"><span class="rev-ava" style="background:#ef6c00">Y</span><div><div class="rev-name">Yurii Polishchuk</div><div class="rev-meta">Nov 2025 · Google review</div></div></div>
+          <div class="rev-top"><span class="rev-ava" style="background:#ef6c00">Y</span><div><div class="rev-name">Yurii Polishchuk</div><div class="rev-meta">Google review</div></div></div>
           <div class="rev-stars" aria-label="5 out of 5 stars">★★★★★</div>
           <p>My truck was a disaster after a long road trip — mud, dust, dog hair, everything. After the detailing, it looked showroom-ready. Incredible craftsmanship!</p>
         </article>
         <article class="rev-card">
-          <div class="rev-top"><span class="rev-ava" style="background:#00838f">C</span><div><div class="rev-name">Clare Mcnair</div><div class="rev-meta">Nov 2025 · Google review</div></div></div>
+          <div class="rev-top"><span class="rev-ava" style="background:#00838f">C</span><div><div class="rev-name">Clare Mcnair</div><div class="rev-meta">Google review</div></div></div>
           <div class="rev-stars" aria-label="5 out of 5 stars">★★★★★</div>
           <p>Misha did a fantastic job on my very dirty car. He is very pleasant and a very hard worker. I would definitely recommend his service. Thank you Misha</p>
         </article>
         <article class="rev-card">
-          <div class="rev-top"><span class="rev-ava" style="background:#5d4037">V</span><div><div class="rev-name">Verron Brooks</div><div class="rev-meta">Nov 2025 · Google review</div></div></div>
+          <div class="rev-top"><span class="rev-ava" style="background:#5d4037">V</span><div><div class="rev-name">Verron Brooks</div><div class="rev-meta">Google review</div></div></div>
           <div class="rev-stars" aria-label="5 out of 5 stars">★★★★★</div>
           <p>My truck is nice and clean again. Thanks to glow guy detailing.</p>
         </article>
         <article class="rev-card">
-          <div class="rev-top"><span class="rev-ava" style="background:#455a64">R</span><div><div class="rev-name">Ren Kangas</div><div class="rev-meta">Nov 2025 · Google review</div></div></div>
+          <div class="rev-top"><span class="rev-ava" style="background:#455a64">R</span><div><div class="rev-name">Ren Kangas</div><div class="rev-meta">Google review</div></div></div>
           <div class="rev-stars" aria-label="5 out of 5 stars">★★★★★</div>
           <p>Amazing service! My car looked new again!</p>
         </article>
@@ -722,13 +727,30 @@
         <p class="kicker" style="margin-bottom:10px">Your Car. Our Reputation.</p>
         <h2>Ready when you are.</h2>
         <p>Send photos of your car and get one exact price in writing — no visits, no pressure, no surprises at your door.</p>
-                <div style="margin:34px auto 6px;max-width:640px;text-align:left">
-          <p style="text-align:center;color:var(--ink-soft);margin:0 0 16px;font-size:.98rem">Or fill in the form — we'll text you one exact price:</p>
-          <div style="background:#ffffff;border-radius:18px;padding:10px 14px;box-shadow:0 24px 60px -24px rgba(0,0,0,.65)">
-            <iframe data-tally-src="https://tally.so/embed/e5Q1zq?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="560" frameborder="0" marginheight="0" marginwidth="0" title="Glow Guy Detailing — Quote Request"></iframe>
+        <div style="margin:34px auto 6px;max-width:640px;text-align:left">
+          <p style="text-align:center;color:var(--ink-soft);margin:0 0 16px;font-size:.98rem">Fill in the form — we'll text you one exact price:</p>
+          <form id="leadForm" action="https://formspree.io/f/mvkakqwq" method="POST" novalidate>
+            <div class="f-grid">
+              <div class="f-field"><label for="f-name">Your name *</label><input id="f-name" name="name" type="text" required autocomplete="name" placeholder="Your name" /></div>
+              <div class="f-field"><label for="f-phone">Phone *</label><input id="f-phone" name="phone" type="tel" required autocomplete="tel" placeholder="289-555-0123" /></div>
+              <div class="f-field"><label for="f-vehicle">Vehicle *</label><input id="f-vehicle" name="vehicle" type="text" required placeholder="e.g. Honda CR-V 2021" /></div>
+              <div class="f-field"><label for="f-size">Vehicle size *</label><select id="f-size" name="size" required><option>Sedan / Coupe</option><option>SUV / Truck</option><option>3-Row / Large</option></select></div>
+              <div class="f-field"><label for="f-package">Package *</label><select id="f-package" name="package" required><option>Winter Salt Rescue</option><option>Interior Reset</option><option>Full Glow</option><option>Showroom + Sealant</option><option>Not sure yet</option></select></div>
+              <div class="f-field"><label for="f-city">Your city *</label><input id="f-city" name="city" type="text" required placeholder="e.g. St. Catharines" /></div>
+              <div class="f-field"><label for="f-day">Preferred day</label><input id="f-day" name="day" type="text" placeholder="e.g. Saturday morning" /></div>
+              <div class="f-field f-wide"><label for="f-notes">Anything we should know?</label><textarea id="f-notes" name="notes" rows="3" placeholder="Pet hair, stains, garage or driveway…"></textarea></div>
+            </div>
+            <input type="hidden" name="_subject" value="New quote request — Glow Guy website" />
+            <button class="btn btn-primary f-submit" type="submit">Get my exact price</button>
+            <p class="form-note">We reply by text with one fixed price — usually within one business hour.</p>
+            <p class="form-err" id="formErr" hidden>Something went wrong — please try again, or text us at 437-551-5149.</p>
+          </form>
+          <div class="form-ok" id="formOk" hidden>
+            <div class="ok-check">✓</div>
+            <h3>Request sent</h3>
+            <p>Thanks — we'll text your exact price shortly. Talk soon.</p>
           </div>
         </div>
-        <script async src="https://tally.so/widgets/embed.js"></script>
         <div class="final-actions">
           <a class="btn btn-ig" href="https://ig.me/m/glowguy.detailing" target="_blank" rel="noopener">Instagram — send photos</a>
           <a class="btn btn-fb" href="https://m.me/61582320059372" target="_blank" rel="noopener">Facebook — message us</a>
@@ -772,7 +794,9 @@
     document.getElementById("calcMeta").textContent = p.name + " · " + SIZE_NAMES[curSize] + " · " + p.time;
     var cb = document.getElementById("calcBook");
     cb.textContent = "Book " + p.name + " — $" + p[curSize];
-    cb.href = "https://tally.so/r/e5Q1zq?pkg=" + encodeURIComponent(p.name) + "&size=" + encodeURIComponent(SIZE_NAMES[curSize]);
+    var fp = document.getElementById("f-package"), fs = document.getElementById("f-size");
+    if (fp) fp.value = p.name;
+    if (fs) fs.value = SIZE_NAMES[curSize];
   }
   document.querySelectorAll("#sizeChips .chip").forEach(function(ch){
     ch.addEventListener("click", function(){
@@ -798,43 +822,7 @@
   }, { threshold: 0.12 });
   document.querySelectorAll(".reveal").forEach(function(el){ io.observe(el); });
 
-  // slideshow
-  (function(){
-    var box = document.getElementById("slideshow");
-    if (!box) return;
-    var slides = box.querySelectorAll(".slide");
-    var dotsBox = box.querySelector(".sl-dots");
-    var i = 0, timer = null;
-    var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    slides.forEach(function(_, k){
-      var d = document.createElement("button");
-      d.type = "button"; d.setAttribute("aria-label", "Photo " + (k + 1));
-      if (k === 0) d.classList.add("on");
-      d.addEventListener("click", function(){ go(k); restart(); });
-      dotsBox.appendChild(d);
-    });
-    var dots = dotsBox.querySelectorAll("button");
-    function go(k){
-      slides[i].classList.remove("on"); dots[i].classList.remove("on");
-      i = (k + slides.length) % slides.length;
-      slides[i].classList.add("on"); dots[i].classList.add("on");
-    }
-    function restart(){ if (timer) clearInterval(timer); if (!reduce) timer = setInterval(function(){ go(i + 1); }, 4000); }
-    box.querySelector(".sl-prev").addEventListener("click", function(){ go(i - 1); restart(); });
-    box.querySelector(".sl-next").addEventListener("click", function(){ go(i + 1); restart(); });
-    box.addEventListener("mouseenter", function(){ if (timer) clearInterval(timer); });
-    box.addEventListener("mouseleave", restart);
-    restart();
-  })();
 
-  // reviews arrows
-  (function(){
-    var track = document.getElementById("revTrack");
-    if (!track) return;
-    var step = 361;
-    document.getElementById("revPrev").addEventListener("click", function(){ track.scrollBy({ left: -step, behavior: "smooth" }); });
-    document.getElementById("revNext").addEventListener("click", function(){ track.scrollBy({ left: step, behavior: "smooth" }); });
-  })();
 </script>
 
 <script>
@@ -849,7 +837,7 @@
     } else if (href.indexOf('ig.me') > -1 || href.indexOf('instagram.com') > -1) {
       if (window.gtag) gtag('event', 'instagram_click');
       if (window.fbq) fbq('track', 'Contact');
-    } else if (href.indexOf('tally.so') > -1) {
+    } else if (a.id === 'calcBook') {
       if (window.gtag) gtag('event', 'quote_click', { method: 'calculator' });
       if (window.fbq) fbq('track', 'Lead');
     } else if (href.indexOf('m.me') > -1 || href.indexOf('facebook.com') > -1) {
@@ -871,13 +859,39 @@
 </script>
 
 <script>
-  // Tally submission -> lead events
-  window.addEventListener('message', function(e){
-    if (e.data && typeof e.data === 'string' && e.data.indexOf('Tally.FormSubmitted') > -1) {
-      if (window.gtag) gtag('event', 'generate_lead', { source: 'tally_form' });
-      if (window.fbq) fbq('track', 'Lead');
-    }
+  // package buttons preselect the form package
+  document.querySelectorAll('[data-book]').forEach(function(b){
+    b.addEventListener('click', function(){
+      var fp = document.getElementById('f-package');
+      if (fp) fp.value = b.getAttribute('data-book');
+    });
   });
+  // Formspree submit -> real lead events
+  (function(){
+    var form = document.getElementById('leadForm');
+    if (!form) return;
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var err = document.getElementById('formErr');
+      if (err) err.hidden = true;
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+      var btn = form.querySelector('.f-submit');
+      btn.disabled = true; btn.textContent = 'Sending…';
+      fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } })
+        .then(function(r){
+          if (r.ok) {
+            form.hidden = true;
+            document.getElementById('formOk').hidden = false;
+            if (window.gtag) gtag('event', 'generate_lead', { source: 'website_form' });
+            if (window.fbq) fbq('track', 'Lead');
+          } else { throw new Error('send failed'); }
+        })
+        .catch(function(){
+          btn.disabled = false; btn.textContent = 'Get my exact price';
+          if (err) err.hidden = false;
+        });
+    });
+  })();
 </script>
 </body>
 </html>
