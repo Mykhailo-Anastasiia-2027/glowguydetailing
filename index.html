@@ -134,11 +134,10 @@
   .hero-card .hc-top{display:flex;align-items:center;gap:9px;font-weight:800;font-size:.94rem}
   .hero-card p{margin:6px 0 0;font-size:.88rem;color:var(--ink-soft);line-height:1.5}
   .dot{width:9px;height:9px;border-radius:50%;background:#43d17c;flex:none;box-shadow:0 0 0 4px rgba(67,209,124,.18)}
-  .hero-videos{position:relative;height:560px}
-  .hv{position:absolute;border-radius:22px;object-fit:cover;border:1px solid var(--line);box-shadow:var(--shadow);background:#0a0f16}
-  .hv-main{right:0;top:0;width:min(330px,74%);height:520px;box-shadow:0 34px 80px -28px rgba(56,182,232,.35)}
-  .hv-back{left:0;bottom:0;width:min(255px,58%);height:400px;transform:rotate(-3deg)}
-  @media (max-width:960px){ .hero-grid{grid-template-columns:1fr;gap:40px} .hero-videos{height:460px;max-width:520px} .hv-main{height:430px} .hv-back{height:320px} }
+  .hero-videos{position:relative}
+  .hv{display:block;width:100%;border-radius:22px;object-fit:cover;border:1px solid var(--line);background:#0a0f16}
+  .hv-main{height:560px;box-shadow:0 34px 80px -28px rgba(56,182,232,.35)}
+  @media (max-width:960px){ .hero-grid{grid-template-columns:1fr;gap:40px} .hv-main{height:480px} }
   @media (max-width:960px){ .hero-media img,.hero-media video{height:380px} .hero-card{left:12px;bottom:12px} .hero-fact{padding-right:16px;margin-right:16px} }
 
   /* marquee */
@@ -401,7 +400,6 @@
         </div>
       </div>
       <div class="hero-videos reveal in" aria-label="Glow Guy detailing work on video">
-        <video class="hv hv-back" autoplay muted loop playsinline preload="metadata" poster="img/poster-cadillac.jpg"><source src="img/vid-cadillac.mp4" type="video/mp4" /></video>
         <video class="hv hv-main" autoplay muted loop playsinline preload="metadata" poster="img/poster-hero.jpg"><source src="img/vid-hero.mp4" type="video/mp4" /></video>
       </div>
     </div>
