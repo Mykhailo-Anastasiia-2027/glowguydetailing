@@ -63,7 +63,9 @@
     { "@type": "Question", "name": "Do you come to my home or office?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — Glow Guy Detailing is fully mobile across the Niagara Region, Hamilton and GTA. We detail at your driveway, garage, underground condo parking or office lot. In winter, interior work and salt removal are done in garages and underground parking, so appointments run all year." } },
     { "@type": "Question", "name": "How long does a detail take?", "acceptedAnswer": { "@type": "Answer", "text": "Interior Reset takes about 2–3 hours, a Full Glow about 3–4 hours, and Showroom + Sealant about 5–6 hours. The Winter Salt Rescue takes 1.5–2 hours. Exact timing depends on vehicle size and condition and is confirmed with your quote." } },
     { "@type": "Question", "name": "Can you remove winter salt stains from carpets?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The Winter Salt Rescue package is built for Ontario winters: hot-water extraction pulls dried salt out of carpets and mats before it destroys the fibres. Fresh salt comes out fully; season-old stains improve dramatically." } },
-    { "@type": "Question", "name": "How do I book?", "acceptedAnswer": { "@type": "Answer", "text": "Call or text 437-551-5149, or message us on Instagram (@glowguy.detailing) or on Facebook. Tell us your vehicle and the package you want — your fixed price is confirmed in writing before we start, usually within one business hour. Pick your day and we come to you." } }
+    { "@type": "Question", "name": "How do I book?", "acceptedAnswer": { "@type": "Answer", "text": "Call or text 437-551-5149, or message us on Instagram (@glowguy.detailing) or on Facebook. Tell us your vehicle and the package you want — your fixed price is confirmed in writing before we start, usually within one business hour. Pick your day and we come to you." } },
+    { "@type": "Question", "name": "What do you need from me on the day?", "acceptedAnswer": { "@type": "Answer", "text": "Just your keys and access to the car. Every package includes labour and products, and we work wherever the car is parked — driveway, garage, underground condo parking or office lot." } },
+    { "@type": "Question", "name": "How and when do I pay?", "acceptedAnswer": { "@type": "Answer", "text": "After the job is done. You check the result first — you only pay when you're happy with the finished car." } }
   ]
 }
 </script>
@@ -84,7 +86,7 @@
     --line:#262626;
     --blue:#38b6e8;
     --blue-bright:#38b6e8;
-    --blue-deep:#f5b800;
+    --blue-deep:#0e6ea8;
     --glow:rgba(56,182,232,.35);
     --radius:22px;
     --shadow:0 24px 60px -24px rgba(0,0,0,.8);
@@ -95,6 +97,7 @@
   body{margin:0;background:var(--bg);color:var(--ink);font-family:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
   img{max-width:100%;display:block}
   a{color:inherit}
+  :focus-visible{outline:2px solid var(--blue-bright);outline-offset:3px;border-radius:4px}
   button,[role="button"],summary{min-height:2.75rem}
   .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
   section{scroll-margin-top:110px}
@@ -102,6 +105,7 @@
 
   /* header — floating pill */
   header{position:sticky;top:0;z-index:60;background:rgba(4,6,10,.88);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+  header.scrolled{box-shadow:0 14px 34px -18px rgba(0,0,0,.85)}
   .nav{display:flex;align-items:center;gap:26px;height:72px;max-width:1180px}
   .brand{display:flex;align-items:center;gap:12px;text-decoration:none;margin-right:auto}
   .brand img{width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 2px var(--line)}
@@ -136,6 +140,10 @@
   .hero-fact:last-child{border-right:none;margin-right:0;padding-right:0}
   .hero-fact b{display:block;font-size:1.22rem;font-weight:800;line-height:1.2}
   .hero-fact span{font-size:.83rem;color:var(--ink-faint);font-weight:600}
+  .hero-rating{margin:24px 0 0;font-size:.95rem;color:var(--ink-soft)}
+  .hero-rating a{text-decoration:none;display:inline-flex;align-items:center;gap:8px;min-height:44px}
+  .hero-rating a:hover{color:var(--ink)}
+  .hero-rating .stars{color:#fbbc04;letter-spacing:2px;font-size:1.02rem}
   .hero-media{position:relative;width:100%;max-width:1020px}
   .hero-media img,.hero-media video{width:100%;height:520px;object-fit:cover;border-radius:26px;box-shadow:var(--shadow);border:1px solid var(--line);display:block;background:#0a0a0a}
   .hero-card{position:absolute;left:22px;bottom:22px;background:rgba(8,8,8,.9);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);padding:17px 21px;max-width:300px;backdrop-filter:blur(8px);text-align:left}
@@ -351,6 +359,7 @@
   .sound-btn:hover{border-color:var(--blue-bright);color:var(--blue-bright)}
   @media (max-width:960px){ .showcase-grid{grid-template-columns:1fr;gap:36px} }
 </style>
+<noscript><style>.reveal{opacity:1!important;transform:none!important;filter:none!important}</style></noscript>
 
 <!-- Google Analytics 4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-5D71EXP37F"></script>
@@ -387,6 +396,7 @@
       <a href="#work">Our work</a>
       <a href="#reviews">Reviews</a>
       <a href="#faq">FAQ</a>
+      <a href="tel:+14375515149" aria-label="Call Glow Guy Detailing at 437-551-5149">437-551-5149</a>
       <a class="btn btn-primary btn-nav" href="#book">Book now</a>
     </nav>
   </div>
@@ -407,10 +417,11 @@
           </a>
           <a class="btn btn-ghost" href="tel:+14375515149">Call 437-551-5149</a>
         </div>
+        <p class="hero-rating"><a href="#reviews"><span class="stars" aria-hidden="true">★★★★★</span><span><b style="color:var(--ink)">5.0 on Google</b> · 8 reviews — read them</span></a></p>
         <div class="hero-facts">
           <div class="hero-fact"><b>From $155</b><span>Winter Salt Rescue</span></div>
           <div class="hero-fact"><b>Exact price</b><span>In writing, up front</span></div>
-          <div class="hero-fact"><b>7 days a week</b><span>We come to you</span></div>
+          <div class="hero-fact"><b>7 days a week</b><span>We come to you · 8am–8pm</span></div>
         </div>
       </div>
       <div class="hero-videos reveal in" aria-label="Glow Guy detailing work on video">
@@ -449,7 +460,7 @@
             <div class="calc-price" id="calcPrice">$210</div>
             <p class="calc-meta" id="calcMeta">Interior Reset · Sedan / Coupe · about 2–3 hours</p>
             <p class="calc-note">Final price confirmed in writing before we arrive. Heavily soiled vehicles (pet hair, bio, heavy salt) may adjust — always quoted first, never after.</p>
-            <a class="btn btn-primary" id="calcBook" href="#book" target="_blank" rel="noopener">Book Interior Reset — $210</a>
+            <a class="btn btn-primary" id="calcBook" href="#book">Book Interior Reset — $210</a>
             <p class="calc-note" style="margin:14px 0 0">Prefer to chat first? <a href="https://ig.me/m/glowguy.detailing" target="_blank" rel="noopener" style="color:var(--blue-bright);font-weight:700">Instagram DM</a> · <a href="https://m.me/61582320059372" target="_blank" rel="noopener" style="color:var(--blue-bright);font-weight:700">Facebook</a> · <a href="tel:+14375515149" style="color:var(--blue-bright);font-weight:700">437-551-5149</a></p>
           </div>
         </div>
@@ -605,17 +616,16 @@
         <p>Filmed on real jobs across Niagara, Hamilton &amp; GTA — our own cars, our own driveways, no stock footage.</p>
       </div>
       <div class="vrow reveal">
-        <video class="vtile" autoplay muted loop playsinline preload="metadata" poster="img/poster-dirty.jpg" aria-label="Filthy carpets and trunk before detailing"><source src="img/vid-dirty.mp4" type="video/mp4" /></video>
-        <video class="vtile" autoplay muted loop playsinline preload="metadata" poster="img/poster-optima.jpg" aria-label="Kia Optima interior after detailing — spotless mats and seats"><source src="img/vid-optima.mp4" type="video/mp4" /></video>
-        <video class="vtile" autoplay muted loop playsinline preload="metadata" poster="img/poster-before.jpg" aria-label="Dodge Challenger front covered in winter salt and dust — before detailing"><source src="img/vid-before.mp4" type="video/mp4" /></video>
-        <video class="vtile" autoplay muted loop playsinline preload="metadata" poster="img/poster-after.jpg" aria-label="The same Challenger front after a full detail — clean and glossy"><source src="img/vid-after.mp4" type="video/mp4" /></video>
+        <video class="vtile" muted loop playsinline preload="none" poster="img/poster-dirty.jpg" aria-label="Filthy carpets and trunk before detailing"><source src="img/vid-dirty.mp4" type="video/mp4" /></video>
+        <video class="vtile" muted loop playsinline preload="none" poster="img/poster-optima.jpg" aria-label="Kia Optima interior after detailing — spotless mats and seats"><source src="img/vid-optima.mp4" type="video/mp4" /></video>
+        <video class="vtile" muted loop playsinline preload="none" poster="img/poster-before.jpg" aria-label="Dodge Challenger front covered in winter salt and dust — before detailing"><source src="img/vid-before.mp4" type="video/mp4" /></video>
+        <video class="vtile" muted loop playsinline preload="none" poster="img/poster-after.jpg" aria-label="The same Challenger front after a full detail — clean and glossy"><source src="img/vid-after.mp4" type="video/mp4" /></video>
       </div>
       <div class="gallery">
         <figure class="reveal"><img src="img/work-1.jpg" width="800" height="600" loading="lazy" decoding="async" alt="Minivan cargo panel before detailing — scuffed, dusty and cluttered" /></figure>
         <figure class="reveal"><img src="img/work-2.jpg" width="800" height="600" loading="lazy" decoding="async" alt="SUV cargo area after the Interior Reset — clean panels and carpets" /></figure>
         <figure class="reveal"><img src="img/work-4.jpg" width="800" height="600" loading="lazy" decoding="async" alt="Centre console and cupholders after detailing — spotless" /></figure>
       </div>
-</div>
     </div>
   </section>
 
@@ -691,6 +701,18 @@
           </summary>
           <div class="faq-body"><p>Call or text <a href="tel:+14375515149" style="color:var(--blue-bright);font-weight:700">437-551-5149</a> or message us on Instagram or Facebook. Tell us your vehicle, get one fixed price in writing, pick your day — done.</p></div>
         </details>
+        <details>
+          <summary>What do you need from me on the day?
+            <span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#38b6e8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
+          </summary>
+          <div class="faq-body"><p>Just your keys and access to the car. Every package includes labour and products, and we work wherever the car is parked — driveway, garage, underground condo parking or office lot.</p></div>
+        </details>
+        <details>
+          <summary>How and when do I pay?
+            <span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#38b6e8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
+          </summary>
+          <div class="faq-body"><p>After the job is done. You check the result first — you only pay when you're happy with the finished car.</p></div>
+        </details>
       </div>
     </div>
   </section>
@@ -762,13 +784,13 @@
           <form id="leadForm" action="https://formspree.io/f/mvkakqwq" method="POST" novalidate>
             <div class="f-grid">
               <div class="f-field"><label for="f-name">Your name *</label><input id="f-name" name="name" type="text" required autocomplete="name" placeholder="Your name" /></div>
-              <div class="f-field"><label for="f-phone">Phone *</label><input id="f-phone" name="phone" type="tel" required autocomplete="tel" placeholder="289-555-0123" /></div>
+              <div class="f-field"><label for="f-phone">Phone *</label><input id="f-phone" name="phone" type="tel" inputmode="tel" required autocomplete="tel" placeholder="289-555-0123" /></div>
               <div class="f-field"><label for="f-vehicle">Vehicle *</label><input id="f-vehicle" name="vehicle" type="text" required placeholder="e.g. Honda CR-V 2021" /></div>
               <div class="f-field"><label for="f-size">Vehicle size *</label><select id="f-size" name="size" required><option>Sedan / Coupe</option><option>SUV / Truck</option><option>3-Row / Large</option></select></div>
               <div class="f-field"><label for="f-package">Package *</label><select id="f-package" name="package" required><option>Winter Salt Rescue</option><option>Interior Reset</option><option>Full Glow</option><option>Showroom + Sealant</option><option>Not sure yet</option></select></div>
               <div class="f-field"><label for="f-city">Your city *</label><input id="f-city" name="city" type="text" required placeholder="e.g. St. Catharines" /></div>
-              <div class="f-field"><label for="f-day">Preferred day</label><input id="f-day" name="day" type="text" placeholder="e.g. Saturday morning" /></div>
-              <div class="f-field f-wide"><label for="f-notes">Anything we should know?</label><textarea id="f-notes" name="notes" rows="3" placeholder="Pet hair, stains, garage or driveway…"></textarea></div>
+              <div class="f-field"><label for="f-day">Preferred day (optional)</label><input id="f-day" name="day" type="text" placeholder="e.g. Saturday morning" /></div>
+              <div class="f-field f-wide"><label for="f-notes">Anything we should know? (optional)</label><textarea id="f-notes" name="notes" rows="3" placeholder="Pet hair, stains, garage or driveway…"></textarea></div>
             </div>
             <input type="hidden" name="_subject" value="New quote request — Glow Guy website" />
             <button class="btn btn-primary f-submit" type="submit">Get my exact price</button>
@@ -920,6 +942,26 @@
           btn.disabled = false; btn.textContent = 'Get my exact price';
           if (err) err.hidden = false;
         });
+    });
+  })();
+</script>
+
+<script>
+  // performance: only play videos while they are on screen (saves mobile data & battery)
+  (function(){
+    var vids = document.querySelectorAll('video');
+    if (!vids.length || !('IntersectionObserver' in window)) return;
+    var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var vio = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        var v = e.target;
+        if (e.isIntersecting) { var pr = v.play(); if (pr && pr.catch) pr.catch(function(){}); }
+        else { v.pause(); }
+      });
+    }, { threshold: 0.15 });
+    vids.forEach(function(v){
+      if (reduced && !v.hasAttribute('autoplay')) return; // gallery tiles stay as posters under reduced motion
+      vio.observe(v);
     });
   })();
 </script>
