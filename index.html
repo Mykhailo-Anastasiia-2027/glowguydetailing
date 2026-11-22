@@ -344,6 +344,12 @@
   .reveal{opacity:0;transform:translateY(24px);filter:blur(6px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.6,.2,1),filter .8s ease}
   .reveal.in{opacity:1;transform:none;filter:blur(0)}
   @media (prefers-reduced-motion: reduce){ .reveal{opacity:1;transform:none;filter:none} }
+  .showcase-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:54px;align-items:center}
+  .showcase-media{position:relative;max-width:400px;margin:0 auto;width:100%}
+  .showcase-media video{width:100%;border-radius:26px;box-shadow:var(--shadow);border:1px solid var(--line);display:block;background:#0a0a0a}
+  .sound-btn{position:absolute;left:16px;bottom:16px;display:inline-flex;align-items:center;gap:8px;background:rgba(8,8,8,.88);color:#fff;border:1px solid var(--line);border-radius:999px;padding:11px 18px;font-weight:700;font-size:.9rem;cursor:pointer;backdrop-filter:blur(8px)}
+  .sound-btn:hover{border-color:var(--blue-bright);color:var(--blue-bright)}
+  @media (max-width:960px){ .showcase-grid{grid-template-columns:1fr;gap:36px} }
 </style>
 
 <!-- Google Analytics 4 -->
@@ -408,7 +414,7 @@
         </div>
       </div>
       <div class="hero-videos reveal in" aria-label="Glow Guy detailing work on video">
-        <video class="hv hv-main" autoplay muted loop playsinline preload="metadata" poster="img/poster-hero.jpg"><source src="img/vid-hero.mp4" type="video/mp4" /></video>
+        <video class="hv hv-main" autoplay muted loop playsinline preload="metadata" poster="img/poster-hero.jpg"><source src="img/hero-v2.mp4" type="video/mp4" /></video>
       </div>
     </div>
   </div>
@@ -520,6 +526,28 @@
       </div>
       <p class="pkgs-note reveal">Not sure which one your car needs? <b>Call or text us</b> — we'll tell you honestly, even if it's the cheaper package.</p>
     </div>
+  </section>
+
+  <!-- SHOWCASE VIDEO -->
+  <section class="section" id="showcase">
+    <div class="wrap">
+      <div class="showcase-grid">
+        <div class="showcase-media reveal">
+          <video id="nastyaVideo" autoplay muted loop playsinline preload="metadata" poster="img/poster-optima.jpg"><source src="img/nastya-reset-web.mp4" type="video/mp4" /></video>
+          <button class="sound-btn" id="nastyaSound" type="button"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9.5 9.5 0 0 1 0 13"/></svg> Watch with sound</button>
+        </div>
+        <div class="reveal">
+          <p class="kicker">See the result</p>
+          <h2>A Glow Guy interior, up close</h2>
+          <p style="color:var(--ink-soft);line-height:1.65;max-width:32rem">This is what an Interior Reset looks like when we're done — spotless seats, carpets and mats, deep-cleaned right at your home. No shop trip, no waiting room. You hand us the keys, we hand back a car that feels new again.</p>
+          <p style="color:var(--ink-soft)"><b style="color:#fff">Interior Reset — from $210</b> · about 2–3 hours · Niagara, Hamilton &amp; GTA</p>
+          <a class="btn btn-primary" href="#book" data-book="Interior Reset">Book Interior Reset — $210</a>
+        </div>
+      </div>
+    </div>
+    <script>
+      (function(){var v=document.getElementById('nastyaVideo'),b=document.getElementById('nastyaSound');if(!v||!b)return;b.addEventListener('click',function(){v.muted=false;v.currentTime=0;v.play();b.style.display='none';});v.addEventListener('click',function(){if(v.muted){v.muted=false;b.style.display='none';}else{v.muted=true;b.style.display='';}});})();
+    </script>
   </section>
 
   <!-- ADD-ONS -->
